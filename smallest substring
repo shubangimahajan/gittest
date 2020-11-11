@@ -1,12 +1,12 @@
 str=input()
-tot=len(set(str))
+total=len(set(str))
 n=len(str)
 
 vis={}
 for k in set(str):
     vis[k]=0
 
-c=0
+count=0
 j=0
 ans=n
 for i in range(len(str)):
@@ -14,14 +14,13 @@ for i in range(len(str)):
     if vis[str[i]]==1:
         c+=1
     
-    if c==tot:
+    if count==total:
         while vis[str[j]]>1:
-            #if vis[str[j]]>1:
             vis[str[j]]-=1
             j+=1
-        win=i-j+1
+        slen=i-j+1
         
-        if ans>win:
-            ans=win
+        if ans>slen:
+            ans=slen
 print(ans)
     
